@@ -1,0 +1,24 @@
+package ShellDelphiPkg;
+
+// Pacote DESIGN-TIME do ShellDelphi.
+// Instalar: abrir no RAD Studio > Build > Install.
+// Depois: menu View > "ShellDelphi Terminal" abre a janela DOCKAVEL
+// (encaixa igual Object Inspector / Structure / Project Manager).
+// O componente TShellDelphi tambem fica na paleta, categoria "ShellDelphi".
+
+{$IMPLICITBUILD ON}
+{$DESCRIPTION 'ShellDelphi - terminal PowerShell dockavel com abas (ConPTY)'}
+{$DESIGNONLY}
+
+requires
+  rtl,
+  vcl,
+  designide;
+
+contains
+  ShellDelphi.ConPTY in '..\Fontes\ShellDelphi.ConPTY.pas',
+  ShellDelphi.Terminal in '..\Fontes\ShellDelphi.Terminal.pas',
+  ShellDelphi in '..\Fontes\ShellDelphi.pas',
+  ShellDelphi.IDE in '..\Fontes\ShellDelphi.IDE.pas';
+
+end.

@@ -1,0 +1,53 @@
+================================================================================
+ ShellDelphi - instalador
+================================================================================
+
+ ShellDelphiInstall.exe instala o componente nas versoes do RAD Studio
+ encontradas no computador.
+
+
+--------------------------------------------------------------------------------
+ COMO USAR
+--------------------------------------------------------------------------------
+
+   1. Feche o RAD Studio por completo.
+   2. Rode ShellDelphiInstall.exe
+   3. Escolha a pasta de destino.
+   4. Marque as versoes e clique em Instalar.
+   5. Abra a IDE: menu View > ShellDelphi Terminal
+
+ Os fontes do componente vao dentro do executavel: nao e preciso baixar
+ mais nada.
+
+
+--------------------------------------------------------------------------------
+ O QUE ELE FAZ
+--------------------------------------------------------------------------------
+
+ Detecta as versoes do RAD Studio instaladas (registro em
+ HKCU\Software\Embarcadero\BDS) e mostra so as que existem na maquina.
+
+ Para cada versao marcada:
+   - grava os arquivos na pasta escolhida
+   - compila o pacote com o MSBuild daquela versao
+   - registra o .bpl em Known Packages, para a IDE carregar ao abrir
+   - acrescenta a pasta Fontes ao Library Path
+
+
+--------------------------------------------------------------------------------
+ QUANDO NAO DA PARA INSTALAR SOZINHO
+--------------------------------------------------------------------------------
+
+ O instalador diz o motivo e o que fazer:
+
+ LICENCA SEM BUILD POR LINHA DE COMANDO
+   Algumas licencas recusam compilar fora da IDE. Abra o .dproj e faca
+   Build + Install pela propria IDE.
+
+ IDE ABERTA
+   Com o RAD Studio aberto o .bpl fica carregado e nao pode ser
+   sobrescrito. Feche a IDE e rode de novo.
+
+ PERSONALIDADE DELPHI AUSENTE
+   Instalacao so com C++ ou sem a personalidade registrada. Rode o
+   instalador do RAD Studio em Modify e marque Delphi - Windows 32-bit.

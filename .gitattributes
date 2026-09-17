@@ -1,0 +1,19 @@
+# Estatistica de linguagens do GitHub: o projeto e Delphi. Scripts de apoio e
+# recursos nao devem entrar na contagem.
+*.bat        linguist-detectable=false
+*.rc         linguist-detectable=false
+*.manifest   linguist-detectable=false
+docs/*       linguist-documentation
+
+# Fim de linha: fontes Delphi sempre CRLF
+*.pas        text eol=crlf
+*.dpk        text eol=crlf
+*.dpr        text eol=crlf
+*.dproj      text eol=crlf
+*.dfm        text eol=crlf
+*.bat        text eol=crlf
+
+# Binarios
+*.res        binary
+*.ico        binary
+*.png        binary

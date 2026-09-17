@@ -1,0 +1,114 @@
+================================================================================
+ ShellDelphi - Terminal PowerShell dockavel no RAD Studio -- Dev Ana Laura Correa
+================================================================================
+
+ Terminal de verdade dentro da IDE, via ConPTY. Roda qualquer IA por linha
+ de comando (Claude Code, Gemini CLI, Codex, OpenCode, Aider), alem de vim e qualquer
+ TUI, com cores e cursor. Encaixa igual Object Inspector.
+
+ Delphi 10.2 Tokyo (Studio 19.0) ate o Delphi 13 / Win32 / Windows 10 1809+
+
+ Compilado e verificado no 10.2 Tokyo e no Delphi 13.
+
+ IMPORTANTE: distribua o CODIGO-FONTE, nunca o .bpl ja compilado. Um pacote
+ compilado em uma versao (ou ate em outro update da mesma versao) pode nao
+ carregar. Cada dev faz Build e Install na propria maquina.
+
+
+--------------------------------------------------------------------------------
+ ARQUIVOS
+--------------------------------------------------------------------------------
+
+   ShellDelphiInstall.exe   o instalador - comece por aqui
+
+   Fontes\                 codigo-fonte do componente
+   Pacote\                 projeto do pacote para a IDE
+   Projetos\               terminal em processo separado (opcional)
+   Doctos\                 documentacao e identidade visual
+
+ O instalador carrega os fontes dentro dele: para instalar, so o .exe
+ basta. As pastas estao aqui para quem quiser ler ou alterar o codigo.
+
+
+--------------------------------------------------------------------------------
+ INSTALAR
+--------------------------------------------------------------------------------
+
+ PELO INSTALADOR
+
+   1. Feche o RAD Studio por completo.
+   2. Rode ShellDelphiInstall.exe
+   3. Escolha a pasta de destino.
+   4. Marque as versoes do RAD Studio e clique em Instalar.
+   5. Abra a IDE: menu View > ShellDelphi Terminal
+
+   Nao precisa de mais nenhum arquivo: os fontes vao dentro do executavel.
+   O instalador grava os arquivos, detecta as versoes instaladas, compila,
+   registra na IDE e ajusta o Library Path. Quando alguma versao nao pode
+   receber o pacote - licenca que nao compila por linha de comando, IDE
+   aberta, personalidade Delphi ausente - ele diz o motivo e o que fazer.
+
+
+ PELA IDE (alternativa, a partir do projeto)
+
+   1. Feche o RAD Studio por completo.
+   2. File > Open Project... > Pacote\ShellDelphiPkg.dproj
+   3. Confirme a plataforma Win32.
+   4. Botao direito no ShellDelphiPkg.bpl > Build
+   5. Botao direito no ShellDelphiPkg.bpl > Install
+   6. Menu View > ShellDelphi Terminal
+   7. Arraste pela barra de titulo ate uma borda para encaixar.
+
+ Se der erro gravando o .bpl, o pacote ainda esta carregado:
+ Component > Install Packages... > desmarque > OK > feche > abra > repita.
+
+ DESINSTALAR: Component > Install Packages... > selecione > Remove.
+
+
+--------------------------------------------------------------------------------
+ USAR
+--------------------------------------------------------------------------------
+
+ BOTOES    Nova aba | Claude Code | Fechar aba | Pasta... (fixa a pasta das
+           proximas abas). Na barra de abas: "+" abre, "x" fecha.
+           A aba mostra o nome da pasta.
+
+ TECLADO   Backspace ............ apaga um caractere
+           Ctrl/Alt+Backspace ... apaga a palavra
+           Ctrl+V, Ctrl+Shift+V, Shift+Insert ... colar
+           Ctrl+Shift+C, Ctrl+Insert ............ copiar
+           Ctrl+C ............... copia se houver selecao; senao interrompe
+           Ctrl+Shift+A ......... selecionar tudo
+           Ctrl+Shift+D ......... diagnostico: escreve o estado do scroll na
+                                  tela (nao envia nada para o programa)
+
+           ROLAR O HISTORICO pelo teclado (nao depende do mouse):
+           Shift+PageUp / PageDown ... uma tela para cima / para baixo
+           Shift+Seta cima / baixo ... uma linha
+           Shift+Home ................ inicio do historico
+           Shift+End ................. volta para o fim
+
+           ATENCAO: com o terminal em foco, as teclas vao para o programa que
+           esta rodando, nao para a IDE. Isso inclui ESC, Tab, setas e atalhos
+           como F12 ou Ctrl+S - e o que faz o Claude Code e o vim funcionarem.
+           Combinacoes com Alt continuam indo para a IDE (menus, Alt+F4).
+           Para usar um atalho da IDE, tire o foco do terminal antes.
+
+ MOUSE     Arrastar esquerdo .... seleciona e copia ao soltar (sempre funciona,
+                                  inclusive dentro do Claude Code)
+           Botao direito ........ cola
+           Barra a direita ...... arrastar o polegar rola; clicar na calha
+                                  rola uma tela
+           Roda ................. rola o historico
+           Roda em TUI .......... rola dentro do programa (vim, htop)
+           Shift+Roda ........... forca rolar o historico do terminal, mesmo
+                                  dentro de uma TUI
+
+ ARQUIVOS  Arrastar arquivo, ou colar arquivo copiado no Explorer, digita o
+           caminho. Colar imagem grava um .png no TEMP e digita o caminho -
+           e assim que o Claude Code recebe imagem.
+
+ Copiar/colar tambem funcionam pelo menu Edit da IDE.
+
+
+

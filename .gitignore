@@ -1,0 +1,49 @@
+# Saida de compilacao do Delphi
+*.dcu
+*.bpl
+*.bpi
+*.dcp
+*.so
+*.apk
+*.drc
+*.map
+*.dres
+*.rsm
+*.tds
+*.dcu
+*.lib
+*.a
+*.o
+*.ocx
+
+# Estado local da IDE - nao pertence ao repositorio
+*.local
+*.identcache
+*.projdata
+*.tvsconfig
+*.stat
+__recovery/
+__history/
+
+# Saida de build
+Build/
+Win32/
+Win64/
+Debug/
+Release/
+
+# O instalador e publicado ja compilado; o codigo-fonte dele e o script de
+# build ficam so na maquina de desenvolvimento.
+Fontes-Instalador/
+gerar-instalador.bat
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Ferramentas de IA e editores - configuracao local, nao pertence ao repositorio
+.claude/
+CLAUDE.md
+.cursor/
+.vscode/
+.idea/
